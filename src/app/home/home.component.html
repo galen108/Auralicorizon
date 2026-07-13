@@ -1,0 +1,61 @@
+<div class="home-container">
+
+  <header class="home-hero">
+    <img
+      src="assets/Auralicorizon.png"
+      alt="Auralicorizon — Civilizational Architecture Codex"
+      class="hero-logo"
+    />
+    <h1 class="hero-title">AURALICORIZON</h1>
+    <h2 class="hero-subtitle">Civilizational Architecture Codex</h2>
+    <p class="hero-tagline">
+      A hybrid analytical framework spanning 6000 BCE to 2100 CE —
+      mapping symbolic, structural, and systemic forces across human civilization.
+    </p>
+  </header>
+
+  <section aria-labelledby="engines-heading" class="engines-section">
+    <h2 id="engines-heading" class="engines-heading">ANALYTICAL ENGINES</h2>
+    <p class="engines-intro">
+      Four interlocking reasoning systems converge to produce civilizational synthesis.
+      Each engine interrogates a distinct layer of historical and emergent reality.
+    </p>
+
+    <div class="engine-grid">
+      @for (engine of registry.engines; track engine.id) {
+        <a
+          [routerLink]="engine.route"
+          class="engine-card"
+          [attr.aria-label]="engine.label + ' — ' + engine.description"
+        >
+          <span class="engine-card-id" aria-hidden="true">{{ engine.id | uppercase }}</span>
+          <h3 class="engine-card-title">{{ engine.label }}</h3>
+          <p class="engine-card-desc">{{ engine.description }}</p>
+          <span class="engine-card-cta" aria-hidden="true">ENTER →</span>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="codex-meta" aria-label="System metadata">
+    <dl class="meta-grid">
+      <div class="meta-item">
+        <dt class="meta-label">TEMPORAL SPAN</dt>
+        <dd class="meta-value">6000 BCE — 2100 CE</dd>
+      </div>
+      <div class="meta-item">
+        <dt class="meta-label">SYNTHESIS METHOD</dt>
+        <dd class="meta-value">Dialectical Fusion</dd>
+      </div>
+      <div class="meta-item">
+        <dt class="meta-label">SYSTEM VERSION</dt>
+        <dd class="meta-value">v0.1.0</dd>
+      </div>
+      <div class="meta-item">
+        <dt class="meta-label">ENGINE COUNT</dt>
+        <dd class="meta-value">{{ registry.engines.length }}</dd>
+      </div>
+    </dl>
+  </section>
+
+</div>

@@ -32,6 +32,7 @@ export class AppShellComponent implements OnInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   isMobile = signal(false);
+  isDark = signal(true);
   private subscription = new Subscription();
 
   readonly engineIcons: Record<string, string> = {
@@ -42,6 +43,11 @@ export class AppShellComponent implements OnInit, OnDestroy {
   };
 
   ngOnInit() {
+    const saved = localStorage.getItem('theme');
+    const dark = saved !== 'light';
+    this.isDark.set(dark);
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+
     this.subscription.add(
       this.breakpointObserver.observe(['(max-width: 768px)']).subscribe(state => {
         this.isMobile.set(state.matches);
@@ -51,6 +57,14 @@ export class AppShellComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  toggleTheme() {
+    const next = !this.isDark();
+    this.isDark.set(next);
+    const val = next ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', val);
+    localStorage.setItem('theme', val);
   }
 
   closeSidenavIfMobile() {

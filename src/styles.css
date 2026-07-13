@@ -1,26 +1,134 @@
-/* Dark codex override for Material M3 CSS custom properties */
+/* ─── Theme CSS variables ──────────────────────────────────────── */
 html {
-  --mat-sys-background: #0a0a0a;
-  --mat-sys-on-background: #c8c8c8;
-  --mat-sys-surface: #0f0f0f;
-  --mat-sys-surface-bright: #161616;
-  --mat-sys-surface-dim: #070707;
-  --mat-sys-surface-container: #141414;
-  --mat-sys-surface-container-high: #1a1a1a;
-  --mat-sys-surface-container-highest: #202020;
-  --mat-sys-surface-container-low: #111111;
-  --mat-sys-surface-container-lowest: #0a0a0a;
-  --mat-sys-surface-variant: #1e1e1e;
-  --mat-sys-on-surface: #c8c8c8;
-  --mat-sys-on-surface-variant: #888888;
-  --mat-sys-outline: #2a2a2a;
-  --mat-sys-outline-variant: #1e1e1e;
-  --mat-sys-inverse-surface: #c8c8c8;
-  --mat-sys-inverse-on-surface: #0a0a0a;
-  --mat-sys-primary: #6ea8fe;
-  --mat-sys-on-primary: #001b3f;
-  --mat-sys-primary-container: #1a2a40;
-  --mat-sys-on-primary-container: #abc7ff;
+  /* Dark theme (default) */
+  --c-bg:                  #000000;
+  --c-bg-nav:              #080808;
+  --c-surface:             #0d0d0d;
+  --c-surface-hi:          #111111;
+  --c-surface-mid:         #0f0f0f;
+  --c-hover:               #131313;
+  --c-border:              #1e1e1e;
+  --c-border-lo:           #1a1a1a;
+  --c-outline:             #2a2a2a;
+  --c-text:                #ffffff;
+  --c-text-sub:            #ffffff;
+  --c-text-dim:            #ffffff;
+  --c-text-vdim:           #ffffff;
+  --c-text-ghost:          #aaaaaa;
+  --c-accent:              #6ea8fe;
+  --c-accent-subtle:       rgba(110, 168, 254, 0.06);
+  --c-accent-glow:         rgba(110, 168, 254, 0.4);
+  --c-accent-chip-bg:      #0d1a2e;
+  --c-accent-chip-border:  #1a3060;
+  --c-bar-bg:              #1a1a1a;
+  --c-bar-fill:            #3a3a3a;
+  --c-sev-critical:        #e05555;
+  --c-sev-high:            #d4813a;
+  --c-sev-warning:         #c8b84a;
+  --c-sev-uncertain:       #6ea8fe;
+  --c-sev-speculative:     #888888;
+  --c-bar-critical:        #8b2222;
+  --c-bar-high:            #8b4a14;
+  --c-bar-warning:         #8b6b14;
+  --c-bar-uncertain:       #1a3060;
+  --c-bar-speculative:     #2a2a2a;
+  --c-danger-surface:      #2a0d0d;
+  --c-warn-surface:        #2a2000;
+  --c-synthesis-border:    #2a3a50;
+  --c-chip-struct-bg:      #1a0d0d;
+  --c-chip-struct-border:  #2a1a1a;
+  --c-antithesis:          #c05050;
+
+  /* Material M3 tokens — dark */
+  --mat-sys-background:                 #000000;
+  --mat-sys-on-background:              #ffffff;
+  --mat-sys-surface:                    #0d0d0d;
+  --mat-sys-surface-bright:             #161616;
+  --mat-sys-surface-dim:                #070707;
+  --mat-sys-surface-container:          #111111;
+  --mat-sys-surface-container-high:     #1a1a1a;
+  --mat-sys-surface-container-highest:  #202020;
+  --mat-sys-surface-container-low:      #080808;
+  --mat-sys-surface-container-lowest:   #000000;
+  --mat-sys-surface-variant:            #1e1e1e;
+  --mat-sys-on-surface:                 #ffffff;
+  --mat-sys-on-surface-variant:         #888888;
+  --mat-sys-outline:                    #2a2a2a;
+  --mat-sys-outline-variant:            #1e1e1e;
+  --mat-sys-inverse-surface:            #ffffff;
+  --mat-sys-inverse-on-surface:         #000000;
+  --mat-sys-primary:                    #6ea8fe;
+  --mat-sys-on-primary:                 #001b3f;
+  --mat-sys-primary-container:          #1a2a40;
+  --mat-sys-on-primary-container:       #abc7ff;
+}
+
+html[data-theme="light"] {
+  --c-bg:                  #FFE4B5;
+  --c-bg-nav:              #f5d495;
+  --c-surface:             #fdedc6;
+  --c-surface-hi:          #fae8c0;
+  --c-surface-mid:         #fdedc6;
+  --c-hover:               #efd8a8;
+  --c-border:              rgba(0, 0, 0, 0.12);
+  --c-border-lo:           rgba(0, 0, 0, 0.10);
+  --c-outline:             rgba(0, 0, 0, 0.20);
+  --c-text:                #000000;
+  --c-text-sub:            #000000;
+  --c-text-dim:            #000000;
+  --c-text-vdim:           #000000;
+  --c-text-ghost:          #555555;
+  --c-accent:              #1a4f9e;
+  --c-accent-subtle:       rgba(26, 79, 158, 0.08);
+  --c-accent-glow:         rgba(26, 79, 158, 0.25);
+  --c-accent-chip-bg:      #ddeeff;
+  --c-accent-chip-border:  #99bbdd;
+  --c-bar-bg:              rgba(0, 0, 0, 0.10);
+  --c-bar-fill:            rgba(0, 0, 0, 0.25);
+  --c-sev-critical:        #cc2222;
+  --c-sev-high:            #cc5500;
+  --c-sev-warning:         #997700;
+  --c-sev-uncertain:       #1a4f9e;
+  --c-sev-speculative:     #666666;
+  --c-bar-critical:        #aa1111;
+  --c-bar-high:            #994400;
+  --c-bar-warning:         #886600;
+  --c-bar-uncertain:       rgba(26, 79, 158, 0.4);
+  --c-bar-speculative:     rgba(0, 0, 0, 0.15);
+  --c-danger-surface:      rgba(204, 0, 0, 0.12);
+  --c-warn-surface:        rgba(150, 130, 0, 0.12);
+  --c-synthesis-border:    #99bbdd;
+  --c-chip-struct-bg:      #ffe0d0;
+  --c-chip-struct-border:  #ddaa88;
+  --c-antithesis:          #aa2222;
+
+  /* Material M3 tokens — light */
+  --mat-sys-background:                 #FFE4B5;
+  --mat-sys-on-background:              #000000;
+  --mat-sys-surface:                    #fdedc6;
+  --mat-sys-surface-bright:             #fff8ec;
+  --mat-sys-surface-dim:                #f5d495;
+  --mat-sys-surface-container:          #fae8c0;
+  --mat-sys-surface-container-high:     #f5e2b8;
+  --mat-sys-surface-container-highest:  #f0dcb0;
+  --mat-sys-surface-container-low:      #fef2d8;
+  --mat-sys-surface-container-lowest:   #FFE4B5;
+  --mat-sys-surface-variant:            #f0dcb0;
+  --mat-sys-on-surface:                 #000000;
+  --mat-sys-on-surface-variant:         #444444;
+  --mat-sys-outline:                    rgba(0, 0, 0, 0.20);
+  --mat-sys-outline-variant:            rgba(0, 0, 0, 0.12);
+  --mat-sys-inverse-surface:            #000000;
+  --mat-sys-inverse-on-surface:         #FFE4B5;
+  --mat-sys-primary:                    #1a4f9e;
+  --mat-sys-on-primary:                 #ffffff;
+  --mat-sys-primary-container:          #d0e4ff;
+  --mat-sys-on-primary-container:       #001b3f;
+}
+
+/* ─── Base ─────────────────────────────────────────────────────── */
+html {
+  font-size: 24px;
 }
 
 html,
@@ -28,108 +136,129 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a;
-  color: #c8c8c8;
+  background-color: var(--c-bg);
+  color: var(--c-text);
   font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  max-width: 100%;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Codex typography overrides */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* Material card dark treatment */
+/* ─── Material component overrides ─────────────────────────────── */
 .mat-mdc-card {
-  background-color: #111111 !important;
-  border: 1px solid #1e1e1e !important;
-  color: #c8c8c8 !important;
+  background-color: var(--c-surface-hi) !important;
+  border: 1px solid var(--c-border-lo) !important;
+  color: var(--c-text) !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-/* Sidenav container */
 .mat-drawer-container,
 .mat-sidenav-container {
-  background-color: #0a0a0a !important;
+  background-color: var(--c-bg) !important;
 }
 
-/* Table dark treatment */
 .mat-mdc-table {
-  background-color: #0f0f0f !important;
+  background-color: var(--c-surface-mid) !important;
 }
 
 .mat-mdc-header-row {
-  background-color: #141414 !important;
+  background-color: var(--c-surface-hi) !important;
 }
 
 .mat-mdc-row {
-  background-color: #0f0f0f !important;
+  background-color: var(--c-surface-mid) !important;
 }
 
 .mat-mdc-row:hover {
-  background-color: #141414 !important;
+  background-color: var(--c-hover) !important;
 }
 
-/* Expansion panel dark */
 .mat-expansion-panel {
-  background-color: #111111 !important;
-  color: #c8c8c8 !important;
+  background-color: var(--c-surface-hi) !important;
+  color: var(--c-text) !important;
 }
 
-/* Chip styling */
 .mat-mdc-chip {
-  background-color: #1a1a1a !important;
-  color: #888888 !important;
-  border: 1px solid #2a2a2a !important;
+  background-color: var(--c-surface-hi) !important;
+  color: var(--c-text-sub) !important;
+  border: 1px solid var(--c-border) !important;
   font-family: 'Courier New', Courier, monospace !important;
   font-size: 0.75rem !important;
 }
 
-/* Stepper */
 .mat-stepper-horizontal,
 .mat-stepper-vertical {
   background-color: transparent !important;
 }
 
-/* Tabs */
 .mat-mdc-tab-body-wrapper {
   background-color: transparent !important;
 }
 
-/* Divider */
 .mat-divider {
-  border-color: #1e1e1e !important;
+  border-color: var(--c-border-lo) !important;
 }
 
-/* List items */
 .mat-mdc-list-item {
-  color: #c8c8c8 !important;
+  color: var(--c-text) !important;
 }
 
-/* Severity color utilities */
-.severity-critical { color: #e05555; }
-.severity-high { color: #d4813a; }
-.severity-warning { color: #c8b84a; }
-.severity-uncertain { color: #6ea8fe; }
-.severity-speculative { color: #888888; }
+/* ─── Severity utilities ────────────────────────────────────────── */
+.severity-critical   { color: var(--c-sev-critical); }
+.severity-high       { color: var(--c-sev-high); }
+.severity-warning    { color: var(--c-sev-warning); }
+.severity-uncertain  { color: var(--c-sev-uncertain); }
+.severity-speculative { color: var(--c-sev-speculative); }
 
-/* Section label styling */
+/* ─── Section 508 / WCAG 2.1 AA global accessibility ───────────── */
+
+/* Visible focus indicator on all keyboard-navigable elements */
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Windows High Contrast / forced-colors mode */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid ButtonText;
+  }
+}
+
+/* ─── Shared label/value helpers ───────────────────────────────── */
 .codex-section-label {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #555555;
+  color: var(--c-text-vdim);
   margin-bottom: 0.25rem;
 }
 
-/* Monospaced value display */
 .codex-value {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.875rem;
-  color: #c8c8c8;
+  color: var(--c-text);
 }

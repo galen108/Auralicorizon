@@ -1,0 +1,208 @@
+.home-container {
+  width: 100%;
+  padding: 56px 24px 80px;
+}
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.home-hero {
+  text-align: center;
+  margin-bottom: 72px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--c-border-lo);
+  max-width: 100%;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 28px;
+  filter: drop-shadow(0 0 28px var(--c-accent-glow));
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--c-text);
+  margin: 0 0 10px;
+}
+
+.hero-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: var(--c-text-sub);
+  font-weight: 400;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.84rem;
+  color: var(--c-text-dim);
+  line-height: 1.9;
+  max-width: 640px;
+  margin: 0 auto;
+  letter-spacing: 0.03em;
+}
+
+/* Keep engine section and meta readable at wide widths */
+.engines-section,
+.codex-meta {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Engine grid ─────────────────────────────────────────────── */
+.engines-section {
+  margin-bottom: 56px;
+}
+
+.engines-heading {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  color: var(--c-text-vdim);
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.engines-intro {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  color: var(--c-text-dim);
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 600px;
+}
+
+.engine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.engine-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border-lo);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--c-text);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.engine-card:hover {
+  background-color: var(--c-hover);
+  border-color: var(--c-accent);
+}
+
+.engine-card:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.engine-card-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  color: var(--c-text-ghost);
+  display: block;
+}
+
+.engine-card-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-accent);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.engine-card-desc {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
+  color: var(--c-text-dim);
+  line-height: 1.6;
+  margin: 4px 0 0;
+  flex: 1;
+}
+
+.engine-card-cta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: var(--c-text-vdim);
+  margin-top: 10px;
+  display: block;
+}
+
+/* ── Metadata strip ──────────────────────────────────────────── */
+.codex-meta {
+  border-top: 1px solid var(--c-border-lo);
+  padding-top: 32px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.25em;
+  color: var(--c-text-ghost);
+  text-transform: uppercase;
+}
+
+.meta-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-text-sub);
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 36px 16px 60px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .engine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
