@@ -1,0 +1,114 @@
+<div class="engine-header">
+  <span class="engine-id">ENGINE-03</span>
+  <h1 class="engine-title">HYBRID SYNTHESIS</h1>
+  <p class="engine-desc">
+    Temporal Codex × StrataTruth · Symbolic–structural interlock · Dialectical fusion layer
+  </p>
+</div>
+
+<mat-tab-group class="fusion-tabs" animationDuration="150ms">
+
+  <!-- Tab 1: Hybrid States -->
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="tab-label">HYBRID STATES</span>
+    </ng-template>
+
+    <div class="tab-content">
+      <div class="section-header">
+        <span class="section-id">HS-01</span>
+        <span class="section-title">SYMBOLIC–STRUCTURAL INTERLOCK STATES</span>
+      </div>
+
+      <div class="states-list">
+        @for (state of service.hybridStates; track state.id) {
+          <mat-card class="state-card">
+            <mat-card-content>
+              <div class="state-id-row">
+                <span class="state-id">{{ state.id | uppercase }}</span>
+              </div>
+
+              <div class="state-pair">
+                <div class="state-axis">
+                  <span class="axis-label">SYMBOLIC</span>
+                  <mat-chip-set>
+                    <mat-chip class="chip-symbolic" disableRipple>
+                      {{ state.symbolic.label }}
+                    </mat-chip>
+                  </mat-chip-set>
+                  <span class="axis-year">{{ formatHorizon(state.symbolic.horizon) }}</span>
+                  <p class="axis-desc">{{ state.symbolic.description }}</p>
+                </div>
+
+                <div class="state-cross">×</div>
+
+                <div class="state-axis">
+                  <span class="axis-label">STRUCTURAL</span>
+                  <mat-chip-set>
+                    <mat-chip
+                      class="chip-structural"
+                      [class]="severityClass(state.structural.severity)"
+                      disableRipple
+                    >
+                      {{ state.structural.domain }}
+                    </mat-chip>
+                  </mat-chip-set>
+                  <span class="axis-severity">SEV {{ (state.structural.severity * 100).toFixed(0) }}%</span>
+                  <p class="axis-desc">{{ state.structural.description }}</p>
+                </div>
+              </div>
+
+              <mat-card class="synthesis-card">
+                <mat-card-content>
+                  <span class="codex-section-label">SYNTHESIS OUTPUT</span>
+                  <p class="synthesis-text">{{ state.synthesis }}</p>
+                </mat-card-content>
+              </mat-card>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </div>
+  </mat-tab>
+
+  <!-- Tab 2: Dialectical Mappings -->
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="tab-label">DIALECTICAL MAPPINGS</span>
+    </ng-template>
+
+    <div class="tab-content">
+      <div class="section-header">
+        <span class="section-id">HS-02</span>
+        <span class="section-title">THESIS → ANTITHESIS → SYNTHESIS</span>
+      </div>
+
+      <div class="dialectic-list">
+        @for (mapping of service.dialecticalMappings; track mapping.thesis; let i = $index) {
+          <mat-card class="dialectic-card">
+            <mat-card-content>
+              <div class="dialectic-index">{{ formatIndex(i) }}</div>
+              <div class="dialectic-flow">
+                <div class="dialectic-node">
+                  <span class="node-label">THESIS</span>
+                  <span class="node-value thesis">{{ mapping.thesis }}</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="dialectic-node">
+                  <span class="node-label">ANTITHESIS</span>
+                  <span class="node-value antithesis">{{ mapping.antithesis }}</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="dialectic-node">
+                  <span class="node-label">SYNTHESIS</span>
+                  <span class="node-value synthesis-node">{{ mapping.synthesis }}</span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

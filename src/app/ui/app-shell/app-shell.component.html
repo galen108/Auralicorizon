@@ -1,0 +1,47 @@
+<mat-sidenav-container class="shell-container">
+
+  <mat-sidenav mode="side" opened class="shell-sidenav">
+    <div class="sidenav-brand">
+      <img src="assets/Auralicorizon.png" alt="Auralicorizon" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-name">AURALICORIZON</span>
+        <span class="brand-sub">CIVILIZATIONAL CODEX</span>
+      </div>
+    </div>
+
+    <div class="nav-label">ENGINES</div>
+    <mat-nav-list>
+      @for (engine of registry.engines; track engine.id) {
+        <a
+          mat-list-item
+          [routerLink]="engine.route"
+          routerLinkActive="nav-active"
+          class="nav-item"
+        >
+          <mat-icon matListItemIcon>{{ engineIcons[engine.id] }}</mat-icon>
+          <span matListItemTitle>{{ engine.label }}</span>
+          <span matListItemLine class="nav-item-desc">{{ engine.description }}</span>
+        </a>
+      }
+    </mat-nav-list>
+
+    <div class="sidenav-footer">
+      <span class="footer-label">HYBRID SYNTHESIS SYSTEM</span>
+      <span class="footer-version">v0.1.0 · 6000 BCE – 2100 CE</span>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="shell-content">
+    <mat-toolbar class="shell-toolbar">
+      <img src="assets/Auralicorizon.png" alt="Auralicorizon" class="toolbar-logo" />
+      <span class="toolbar-title">AURALICORIZON</span>
+      <span class="toolbar-divider">|</span>
+      <span class="toolbar-sub">CIVILIZATIONAL ARCHITECTURE CODEX</span>
+    </mat-toolbar>
+
+    <main class="shell-main">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

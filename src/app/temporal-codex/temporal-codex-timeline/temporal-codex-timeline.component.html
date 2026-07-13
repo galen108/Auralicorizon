@@ -1,0 +1,107 @@
+<div class="engine-header">
+  <span class="engine-id">ENGINE-01</span>
+  <h1 class="engine-title">TEMPORAL CODEX</h1>
+  <p class="engine-desc">
+    Symbolic timeline: 6000 BCE → 2100 CE · Mythic horizon analysis · Civilizational cycle mapping
+  </p>
+</div>
+
+<div class="section-grid">
+
+  <!-- Symbolic Horizons Timeline -->
+  <section class="section-full">
+    <div class="section-header">
+      <span class="section-id">TC-01</span>
+      <span class="section-title">SYMBOLIC HORIZONS</span>
+    </div>
+
+    <div class="timeline">
+      @for (horizon of service.symbolicHorizons; track horizon.id; let i = $index) {
+        <div class="timeline-entry">
+          <div class="timeline-axis">
+            <div class="axis-dot" [class.axis-dot--current]="horizon.horizon === 2025"></div>
+            @if (i < service.symbolicHorizons.length - 1) {
+              <div class="axis-line"></div>
+            }
+          </div>
+          <mat-card class="timeline-card" [class.timeline-card--current]="horizon.horizon === 2025">
+            <mat-card-header>
+              <mat-card-subtitle class="horizon-year">{{ formatHorizon(horizon.horizon) }}</mat-card-subtitle>
+              <mat-card-title class="horizon-label">{{ horizon.label }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="horizon-desc">{{ horizon.description }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+    </div>
+  </section>
+
+  <div class="section-row">
+
+    <!-- Civilizational Cycle Patterns -->
+    <section class="section-half">
+      <div class="section-header">
+        <span class="section-id">TC-02</span>
+        <span class="section-title">CIVILIZATIONAL CYCLE PATTERNS</span>
+      </div>
+      <mat-card class="data-card">
+        <mat-list>
+          @for (phase of service.civilizationalCyclePatterns; track phase.phase; let last = $last) {
+            <mat-list-item class="phase-item">
+              <div class="phase-content">
+                <div class="phase-top">
+                  <span class="phase-name">{{ phase.phase }}</span>
+                  <span class="phase-range">{{ phase.range }}</span>
+                </div>
+                <span class="phase-signal">{{ phase.signal }}</span>
+              </div>
+            </mat-list-item>
+            @if (!last) {
+              <mat-divider />
+            }
+          }
+        </mat-list>
+      </mat-card>
+    </section>
+
+    <!-- Mythic Diagnostic Signals -->
+    <section class="section-half">
+      <div class="section-header">
+        <span class="section-id">TC-03</span>
+        <span class="section-title">MYTHIC DIAGNOSTIC SIGNALS</span>
+      </div>
+      <div class="diagnostics-grid">
+        @for (diag of service.mythicDiagnosticSignals; track diag.id) {
+          <mat-card class="diag-card">
+            <mat-card-content>
+              <span class="codex-section-label">{{ diag.label }}</span>
+              <div class="diag-value-row">
+                <span
+                  class="diag-value"
+                  [class.severity-critical]="diag.status === 'critical'"
+                  [class.severity-warning]="diag.status === 'warning'"
+                >{{ (diag.value * 100).toFixed(0) }}</span>
+                <span class="diag-unit">/ 100</span>
+              </div>
+              <div class="diag-bar-track">
+                <div
+                  class="diag-bar-fill"
+                  [style.width.%]="diag.value * 100"
+                  [class.diag-bar--critical]="diag.status === 'critical'"
+                  [class.diag-bar--warning]="diag.status === 'warning'"
+                ></div>
+              </div>
+              <span class="diag-status" [class.severity-critical]="diag.status === 'critical'"
+                [class.severity-warning]="diag.status === 'warning'">
+                {{ diag.status | uppercase }}
+              </span>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
+    </section>
+
+  </div>
+</div>

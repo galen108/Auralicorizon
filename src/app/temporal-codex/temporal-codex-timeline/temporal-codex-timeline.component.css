@@ -1,0 +1,260 @@
+.engine-header {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.engine-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: #333333;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.engine-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #c8c8c8;
+  margin: 0 0 6px;
+}
+
+.engine-desc {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: #555555;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.section-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.6rem;
+  color: #333333;
+  letter-spacing: 0.15em;
+}
+
+.section-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #888888;
+  font-weight: 600;
+}
+
+.section-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section-full {
+  width: 100%;
+}
+
+.section-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.section-half {
+  min-width: 0;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-entry {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.timeline-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 14px;
+}
+
+.axis-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  flex-shrink: 0;
+}
+
+.axis-dot--current {
+  background-color: #6ea8fe;
+  border-color: #6ea8fe;
+  box-shadow: 0 0 6px rgba(110, 168, 254, 0.4);
+}
+
+.axis-line {
+  width: 1px;
+  flex: 1;
+  min-height: 12px;
+  background-color: #1e1e1e;
+  margin-top: 2px;
+}
+
+.timeline-card {
+  flex: 1;
+  margin-bottom: 8px;
+  background-color: #0f0f0f !important;
+  border: 1px solid #1a1a1a !important;
+}
+
+.timeline-card--current {
+  border-color: rgba(110, 168, 254, 0.3) !important;
+  background-color: rgba(110, 168, 254, 0.04) !important;
+}
+
+.horizon-year {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.1em;
+  color: #555555 !important;
+}
+
+.horizon-label {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  color: #c8c8c8 !important;
+}
+
+.horizon-desc {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Data card */
+.data-card {
+  background-color: #0f0f0f !important;
+  border: 1px solid #1a1a1a !important;
+  padding: 0 !important;
+}
+
+.phase-item {
+  height: auto !important;
+  padding: 10px 0 !important;
+}
+
+.phase-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 2px 0;
+}
+
+.phase-top {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.phase-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #c8c8c8;
+  letter-spacing: 0.06em;
+}
+
+.phase-range {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.65rem;
+  color: #444444;
+}
+
+.phase-signal {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* Diagnostics grid */
+.diagnostics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.diag-card {
+  background-color: #0f0f0f !important;
+  border: 1px solid #1a1a1a !important;
+  padding: 0 !important;
+}
+
+.diag-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.diag-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.diag-unit {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.65rem;
+  color: #444444;
+}
+
+.diag-bar-track {
+  height: 2px;
+  background-color: #1a1a1a;
+  border-radius: 1px;
+  margin: 6px 0 5px;
+  overflow: hidden;
+}
+
+.diag-bar-fill {
+  height: 100%;
+  border-radius: 1px;
+  background-color: #3a3a3a;
+  transition: width 0.3s ease;
+}
+
+.diag-bar--critical {
+  background-color: #8b2222;
+}
+
+.diag-bar--warning {
+  background-color: #8b6b14;
+}
+
+.diag-status {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+}

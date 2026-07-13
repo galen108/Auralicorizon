@@ -1,0 +1,88 @@
+<div class="engine-header">
+  <span class="engine-id">ENGINE-04</span>
+  <h1 class="engine-title">TRANSITIONAL HORIZON</h1>
+  <p class="engine-desc">
+    Civilizational inflection points · System thresholds · Probability mapping · 2026–2100 CE
+  </p>
+</div>
+
+<div class="section-grid">
+
+  <section class="section-stepper">
+    <div class="section-header">
+      <span class="section-id">TH-01</span>
+      <span class="section-title">THRESHOLD SEQUENCE</span>
+    </div>
+
+    <mat-stepper orientation="vertical" [linear]="false" class="horizon-stepper">
+      @for (threshold of service.transitionalThresholds; track threshold.id) {
+        <mat-step [completed]="false" [editable]="false">
+          <ng-template matStepLabel>
+            <div class="step-label-row">
+              <span class="step-year">{{ threshold.year }}</span>
+              <span class="step-name">{{ threshold.label }}</span>
+              <span class="step-status" [class]="statusClass(threshold.status)">
+                {{ threshold.status | uppercase }}
+              </span>
+            </div>
+          </ng-template>
+
+          <div class="step-body">
+            <div class="step-metrics">
+              <div class="step-metric">
+                <span class="codex-section-label">PROBABILITY</span>
+                <div class="prob-row">
+                  <span class="prob-value" [class]="statusClass(threshold.status)">
+                    {{ probabilityBar(threshold.probability) }}%
+                  </span>
+                </div>
+                <div class="prob-bar-track">
+                  <div
+                    class="prob-bar-fill"
+                    [style.width.%]="threshold.probability * 100"
+                    [class]="statusClass(threshold.status) + '-bar'"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="step-metric">
+                <span class="codex-section-label">TARGET YEAR</span>
+                <span class="year-value">{{ threshold.year }} CE</span>
+              </div>
+
+              <div class="step-metric">
+                <span class="codex-section-label">YEARS FROM NOW</span>
+                <span class="delta-value">T+{{ threshold.year - 2026 }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+      }
+    </mat-stepper>
+  </section>
+
+  <section class="section-summary">
+    <div class="section-header">
+      <span class="section-id">TH-02</span>
+      <span class="section-title">HORIZON SUMMARY</span>
+    </div>
+
+    <div class="summary-grid">
+      @for (threshold of service.transitionalThresholds; track threshold.id) {
+        <mat-card class="summary-card" [class]="'summary-card--' + threshold.status">
+          <mat-card-content>
+            <div class="summary-year" [class]="statusClass(threshold.status)">
+              {{ threshold.year }}
+            </div>
+            <div class="summary-label">{{ threshold.label }}</div>
+            <div class="summary-prob">{{ probabilityBar(threshold.probability) }}%</div>
+            <div class="summary-status" [class]="statusClass(threshold.status)">
+              {{ threshold.status | uppercase }}
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+</div>

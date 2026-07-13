@@ -1,0 +1,128 @@
+<div class="engine-header">
+  <span class="engine-id">ENGINE-02</span>
+  <h1 class="engine-title">STRATATRUTH</h1>
+  <p class="engine-desc">
+    Structural incentive mapping · Automation collapse indicators · Opacity diagnostics · Proto-caste analysis
+  </p>
+</div>
+
+<div class="section-grid">
+
+  <!-- Structural Signal Table -->
+  <section>
+    <div class="section-header">
+      <span class="section-id">ST-01</span>
+      <span class="section-title">STRUCTURAL STRESS SIGNALS</span>
+    </div>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="service.structuralSignals" class="stress-table">
+
+        <ng-container matColumnDef="domain">
+          <th mat-header-cell *matHeaderCellDef class="col-header">DOMAIN</th>
+          <td mat-cell *matCellDef="let signal" class="col-domain">{{ signal.domain }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="severity">
+          <th mat-header-cell *matHeaderCellDef class="col-header col-severity-header">SEVERITY</th>
+          <td mat-cell *matCellDef="let signal" class="col-severity">
+            <div class="severity-cell">
+              <span class="severity-pct" [class]="severityClass(signal.severity)">
+                {{ (signal.severity * 100).toFixed(0) }}%
+              </span>
+              <div class="severity-bar-track">
+                <div
+                  class="severity-bar-fill"
+                  [style.width.%]="signal.severity * 100"
+                  [class]="severityClass(signal.severity) + '-bar'"
+                ></div>
+              </div>
+              <span class="severity-label" [class]="severityClass(signal.severity)">
+                {{ severityLabel(signal.severity) }}
+              </span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef class="col-header">DIAGNOSTIC</th>
+          <td mat-cell *matCellDef="let signal" class="col-desc">{{ signal.description }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="signalColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: signalColumns;" class="signal-row"></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Automation Collapse Indicators -->
+  <section>
+    <div class="section-header">
+      <span class="section-id">ST-02</span>
+      <span class="section-title">AUTOMATION COLLAPSE INDICATORS</span>
+    </div>
+
+    <mat-accordion class="collapse-panels">
+      @for (indicator of service.automationCollapseIndicators; track indicator.sector) {
+        <mat-expansion-panel class="collapse-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="panel-title">{{ indicator.sector }}</mat-panel-title>
+            <mat-panel-description class="panel-desc">
+              <span [class]="severityClass(indicator.displacementIndex)">
+                DISPLACEMENT {{ (indicator.displacementIndex * 100).toFixed(0) }}%
+              </span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="panel-content">
+            <div class="indicator-row">
+              <div class="indicator-metric">
+                <span class="codex-section-label">AUTOMATION RATE</span>
+                <span class="indicator-value">{{ (indicator.automationRate * 100).toFixed(0) }}%</span>
+                <div class="indicator-bar-track">
+                  <div class="indicator-bar-fill" [style.width.%]="indicator.automationRate * 100"></div>
+                </div>
+              </div>
+              <div class="indicator-metric">
+                <span class="codex-section-label">DISPLACEMENT INDEX</span>
+                <span class="indicator-value" [class]="severityClass(indicator.displacementIndex)">
+                  {{ (indicator.displacementIndex * 100).toFixed(0) }}%
+                </span>
+                <div class="indicator-bar-track">
+                  <div
+                    class="indicator-bar-fill indicator-bar-fill--displacement"
+                    [style.width.%]="indicator.displacementIndex * 100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+
+  <!-- Opacity Diagnostics -->
+  <section>
+    <div class="section-header">
+      <span class="section-id">ST-03</span>
+      <span class="section-title">OPACITY DIAGNOSTICS</span>
+    </div>
+    <div class="opacity-grid">
+      @for (diag of service.opacityDiagnostics; track diag.domain) {
+        <mat-card class="opacity-card">
+          <mat-card-content>
+            <div class="opacity-top">
+              <span class="codex-section-label">{{ diag.domain }}</span>
+              <span class="opacity-score" [class]="severityClass(diag.opacityScore)">
+                {{ (diag.opacityScore * 100).toFixed(0) }}%
+              </span>
+            </div>
+            <p class="opacity-note">{{ diag.note }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+</div>

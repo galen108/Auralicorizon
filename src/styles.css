@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+/* Dark codex override for Material M3 CSS custom properties */
+html {
+  --mat-sys-background: #0a0a0a;
+  --mat-sys-on-background: #c8c8c8;
+  --mat-sys-surface: #0f0f0f;
+  --mat-sys-surface-bright: #161616;
+  --mat-sys-surface-dim: #070707;
+  --mat-sys-surface-container: #141414;
+  --mat-sys-surface-container-high: #1a1a1a;
+  --mat-sys-surface-container-highest: #202020;
+  --mat-sys-surface-container-low: #111111;
+  --mat-sys-surface-container-lowest: #0a0a0a;
+  --mat-sys-surface-variant: #1e1e1e;
+  --mat-sys-on-surface: #c8c8c8;
+  --mat-sys-on-surface-variant: #888888;
+  --mat-sys-outline: #2a2a2a;
+  --mat-sys-outline-variant: #1e1e1e;
+  --mat-sys-inverse-surface: #c8c8c8;
+  --mat-sys-inverse-on-surface: #0a0a0a;
+  --mat-sys-primary: #6ea8fe;
+  --mat-sys-on-primary: #001b3f;
+  --mat-sys-primary-container: #1a2a40;
+  --mat-sys-on-primary-container: #abc7ff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #c8c8c8;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Codex typography overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Material card dark treatment */
+.mat-mdc-card {
+  background-color: #111111 !important;
+  border: 1px solid #1e1e1e !important;
+  color: #c8c8c8 !important;
+}
+
+/* Sidenav container */
+.mat-drawer-container,
+.mat-sidenav-container {
+  background-color: #0a0a0a !important;
+}
+
+/* Table dark treatment */
+.mat-mdc-table {
+  background-color: #0f0f0f !important;
+}
+
+.mat-mdc-header-row {
+  background-color: #141414 !important;
+}
+
+.mat-mdc-row {
+  background-color: #0f0f0f !important;
+}
+
+.mat-mdc-row:hover {
+  background-color: #141414 !important;
+}
+
+/* Expansion panel dark */
+.mat-expansion-panel {
+  background-color: #111111 !important;
+  color: #c8c8c8 !important;
+}
+
+/* Chip styling */
+.mat-mdc-chip {
+  background-color: #1a1a1a !important;
+  color: #888888 !important;
+  border: 1px solid #2a2a2a !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 0.75rem !important;
+}
+
+/* Stepper */
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  background-color: transparent !important;
+}
+
+/* Tabs */
+.mat-mdc-tab-body-wrapper {
+  background-color: transparent !important;
+}
+
+/* Divider */
+.mat-divider {
+  border-color: #1e1e1e !important;
+}
+
+/* List items */
+.mat-mdc-list-item {
+  color: #c8c8c8 !important;
+}
+
+/* Severity color utilities */
+.severity-critical { color: #e05555; }
+.severity-high { color: #d4813a; }
+.severity-warning { color: #c8b84a; }
+.severity-uncertain { color: #6ea8fe; }
+.severity-speculative { color: #888888; }
+
+/* Section label styling */
+.codex-section-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555555;
+  margin-bottom: 0.25rem;
+}
+
+/* Monospaced value display */
+.codex-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  color: #c8c8c8;
+}
