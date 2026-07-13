@@ -5,6 +5,15 @@
   <title>Auralicorizon</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var redirect = sessionStorage.getItem('spa_redirect');
+      if (redirect) {
+        sessionStorage.removeItem('spa_redirect');
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
   <link rel="icon" type="image/png" href="assets/Auralicorizon.png">
 </head>
 <body class="mat-typography">
