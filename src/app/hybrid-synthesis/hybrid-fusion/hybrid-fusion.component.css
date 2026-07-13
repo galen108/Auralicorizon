@@ -191,6 +191,31 @@
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .state-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .state-cross {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .dialectic-flow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .flow-arrow {
+    text-align: left;
+    padding-left: 4px;
+  }
+
+  .engine-title {
+    font-size: 1.1rem;
+  }
+}
+
 /* Dialectical mappings */
 .dialectic-list {
   display: flex;

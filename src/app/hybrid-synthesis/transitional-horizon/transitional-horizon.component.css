@@ -185,6 +185,26 @@
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .step-metrics {
+    gap: 16px;
+  }
+
+  .engine-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .summary-card {
   background-color: #0f0f0f !important;
   border: 1px solid #1a1a1a !important;

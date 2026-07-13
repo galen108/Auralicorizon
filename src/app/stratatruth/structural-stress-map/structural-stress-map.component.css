@@ -228,6 +228,30 @@
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .opacity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .indicator-row {
+    grid-template-columns: 1fr;
+  }
+
+  .engine-title {
+    font-size: 1.1rem;
+  }
+
+  .engine-desc {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .opacity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .opacity-card {
   background-color: #0f0f0f !important;
   border: 1px solid #1a1a1a !important;

@@ -68,6 +68,20 @@
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .section-row {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .engine-title {
+    font-size: 1.1rem;
+  }
+}
+
 .section-half {
   min-width: 0;
 }

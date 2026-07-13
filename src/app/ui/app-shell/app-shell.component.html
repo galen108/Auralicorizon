@@ -1,6 +1,11 @@
 <mat-sidenav-container class="shell-container">
 
-  <mat-sidenav mode="side" opened class="shell-sidenav">
+  <mat-sidenav
+    #sidenav
+    [mode]="isMobile() ? 'over' : 'side'"
+    [opened]="!isMobile()"
+    class="shell-sidenav"
+  >
     <div class="sidenav-brand">
       <img src="assets/Auralicorizon.png" alt="Auralicorizon" class="brand-logo" />
       <div class="brand-text">
@@ -17,6 +22,7 @@
           [routerLink]="engine.route"
           routerLinkActive="nav-active"
           class="nav-item"
+          (click)="closeSidenavIfMobile()"
         >
           <mat-icon matListItemIcon>{{ engineIcons[engine.id] }}</mat-icon>
           <span matListItemTitle>{{ engine.label }}</span>
@@ -33,6 +39,11 @@
 
   <mat-sidenav-content class="shell-content">
     <mat-toolbar class="shell-toolbar">
+      @if (isMobile()) {
+        <button mat-icon-button class="menu-btn" (click)="sidenav.toggle()" aria-label="Toggle navigation">
+          <mat-icon>menu</mat-icon>
+        </button>
+      }
       <img src="assets/Auralicorizon.png" alt="Auralicorizon" class="toolbar-logo" />
       <span class="toolbar-title">AURALICORIZON</span>
       <span class="toolbar-divider">|</span>

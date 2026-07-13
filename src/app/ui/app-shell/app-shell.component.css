@@ -155,3 +155,29 @@
   overflow-y: auto;
   padding: 24px;
 }
+
+.menu-btn {
+  color: #888888 !important;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .shell-toolbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .toolbar-divider,
+  .toolbar-sub {
+    display: none;
+  }
+
+  .toolbar-title {
+    font-size: 0.7rem;
+  }
+
+  .shell-main {
+    padding: 16px 12px;
+  }
+}
